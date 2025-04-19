@@ -12,8 +12,11 @@ void setup() {
   pinMode(12, OUTPUT);
   pinMode(13, OUTPUT);
 
+  /* --- */
+
   delay(100);
   digitalWrite(13, HIGH);
+
   digitalWrite(7, LOW); 
   digitalWrite(6, LOW);
   digitalWrite(5, HIGH);
@@ -22,10 +25,14 @@ void setup() {
   digitalWrite(2, LOW);
   digitalWrite(1, LOW);
   digitalWrite(0, LOW);
+
   digitalWrite(13, LOW);
+
+  /* --- */
 
   delay(100);
   digitalWrite(13, HIGH);
+
   digitalWrite(7, LOW); 
   digitalWrite(6, LOW);
   digitalWrite(5, LOW);
@@ -34,10 +41,14 @@ void setup() {
   digitalWrite(2, HIGH);
   digitalWrite(1, HIGH);
   digitalWrite(0, LOW);
+
   digitalWrite(13, LOW);
+
+  /* --- */
 
   delay(100);
   digitalWrite(13, HIGH);
+
   digitalWrite(7, LOW); 
   digitalWrite(6, LOW);
   digitalWrite(5, LOW);
@@ -46,10 +57,14 @@ void setup() {
   digitalWrite(2, LOW);
   digitalWrite(1, LOW);
   digitalWrite(0, HIGH);
+
   digitalWrite(13, LOW);
+
+  /* --- */
 
   delay(100);
   digitalWrite(13, HIGH);
+
   digitalWrite(7, HIGH);
   digitalWrite(6, HIGH);
   digitalWrite(5, LOW);
@@ -58,6 +73,7 @@ void setup() {
   digitalWrite(2, LOW);
   digitalWrite(1, LOW);
   digitalWrite(0, HIGH);
+
   digitalWrite(13, LOW);
 }
 
