@@ -17,8 +17,12 @@ func main() {
 	m.D12.Configure(m.PinConfig{Mode: m.PinOutput})
 	m.D13.Configure(m.PinConfig{Mode: m.PinOutput})
 
+	/* --- */
+
 	time.Sleep(100 * time.Millisecond)
-	m.D13.High()
+	m.D13.High() // Start command.
+
+	// Write clear display command. 00000001
 	m.D7.Low()
 	m.D6.Low()
 	m.D5.Low()
@@ -27,17 +31,23 @@ func main() {
 	m.D2.Low()
 	m.D1.Low()
 	m.D0.High()
-	m.D13.Low()
+
+	m.D13.Low() // Finish command.
+
+	/* --- */
 
 	time.Sleep(100 * time.Millisecond)
-	m.D13.High()
-	m.D7.High()
-	m.D6.High()
+	m.D13.High() // Start command.
+
+	// Write set cursor position command. 11000001
+	m.D7.High() // Indicate set address command.
+	m.D6.High() // Indicate column 2.
 	m.D5.Low()
 	m.D4.Low()
 	m.D3.Low()
 	m.D2.Low()
 	m.D1.Low()
-	m.D0.High()
-	m.D13.Low()
+	m.D0.High() // Indicate row 1.
+
+	m.D13.Low() // Finish command.
 }
