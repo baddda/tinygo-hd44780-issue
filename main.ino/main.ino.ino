@@ -16,6 +16,30 @@ void setup() {
   digitalWrite(13, HIGH);
   digitalWrite(7, LOW); 
   digitalWrite(6, LOW);
+  digitalWrite(5, HIGH);
+  digitalWrite(4, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, LOW);
+  digitalWrite(1, LOW);
+  digitalWrite(0, LOW);
+  digitalWrite(13, LOW);
+
+  delay(100);
+  digitalWrite(13, HIGH);
+  digitalWrite(7, LOW); 
+  digitalWrite(6, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(2, HIGH);
+  digitalWrite(1, HIGH);
+  digitalWrite(0, LOW);
+  digitalWrite(13, LOW);
+
+  delay(100);
+  digitalWrite(13, HIGH);
+  digitalWrite(7, LOW); 
+  digitalWrite(6, LOW);
   digitalWrite(5, LOW);
   digitalWrite(4, LOW);
   digitalWrite(3, LOW);

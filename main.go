@@ -22,6 +22,40 @@ func main() {
 	time.Sleep(100 * time.Millisecond)
 	m.D13.High() // Start command.
 
+	// Sets to 8-bit operation and selects 2-line display and 5 × 8 dot character font.
+	m.D7.Low()
+	m.D6.Low()
+	m.D5.High()
+	m.D4.High()
+	m.D3.High()
+	m.D2.Low()
+	m.D1.Low()
+	m.D0.Low()
+
+	m.D13.Low() // Finish command.
+
+	/* --- */
+
+	time.Sleep(100 * time.Millisecond)
+	m.D13.High() // Start command.
+
+	// Turns on display and cursor.
+	m.D7.Low()
+	m.D6.Low()
+	m.D5.Low()
+	m.D4.Low()
+	m.D3.High()
+	m.D2.High()
+	m.D1.High()
+	m.D0.Low()
+
+	m.D13.Low() // Finish command.
+
+	/* --- */
+
+	time.Sleep(100 * time.Millisecond)
+	m.D13.High() // Start command.
+
 	// Write clear display command. 00000001
 	m.D7.Low()
 	m.D6.Low()
