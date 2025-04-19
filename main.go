@@ -2,21 +2,42 @@ package main
 
 import (
 	m "machine"
-	"tinygo.org/x/drivers/hd44780"
+	"time"
 )
 
 func main() {
-	m.Serial.Configure(m.UARTConfig{BaudRate: 9600})
-	lcd, err := hd44780.NewGPIO8Bit([]m.Pin{m.D0, m.D1, m.D2, m.D3, m.D4, m.D5, m.D6, m.D7}, m.D13, m.D12, m.NoPin)
-	if err != nil {
-		println("error: create LCD", err.Error())
-		return
-	}
-	if err := lcd.Configure(hd44780.Config{Width: 16, Height: 2}); err != nil {
-		println("error: configure LCD", err.Error())
-		return
+	m.D0.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D1.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D2.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D3.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D4.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D5.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D6.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D7.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D12.Configure(m.PinConfig{Mode: m.PinOutput})
+	m.D13.Configure(m.PinConfig{Mode: m.PinOutput})
 
-	}
+	time.Sleep(100 * time.Millisecond)
+	m.D13.High()
+	m.D7.Low()
+	m.D6.Low()
+	m.D5.Low()
+	m.D4.Low()
+	m.D3.Low()
+	m.D2.Low()
+	m.D1.Low()
+	m.D0.High()
+	m.D13.Low()
 
-	lcd.ClearDisplay()
+	time.Sleep(100 * time.Millisecond)
+	m.D13.High()
+	m.D7.High()
+	m.D6.High()
+	m.D5.Low()
+	m.D4.Low()
+	m.D3.Low()
+	m.D2.Low()
+	m.D1.Low()
+	m.D0.High()
+	m.D13.Low()
 }
